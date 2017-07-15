@@ -51,15 +51,17 @@ func isHostValid(host string, cert *ingress.SSLCert) bool {
 	if cert == nil {
 		return false
 	}
+	return true
 
+	/*
 	lowered := toLowerCaseASCII(host)
 	for _, cn := range cert.CN {
 		if matchHostnames(toLowerCaseASCII(cn), lowered) {
 			return true
 		}
 	}
-
 	return false
+	*/
 }
 
 func matchHostnames(pattern, host string) bool {
